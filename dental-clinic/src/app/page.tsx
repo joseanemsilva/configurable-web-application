@@ -3,6 +3,7 @@ import EngageSection from "@/components/EngageSection";
 import ServiceSection from "@/components/ServiceSection";
 import PaymentPlanSection from "@/components/PaymentPlanSection";
 import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ServiceSection/>
       <PaymentPlanSection/>
       <Testimonials/>
+      <Contact/>
     </div>
   );
 }
