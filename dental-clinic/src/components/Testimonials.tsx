@@ -14,7 +14,7 @@ const testimonialData: Testimonial[] = [
     id: 1,
     name: "Maria S",
     content:
-      "The best dental experience I've ever had. Being able to explain my symptoms in Portuguese made me feel so much more at ease. Highly recommend!",
+      "The best dental experience I've ever had. Being able to explain my symptoms in Portuguese made me feel like home and embraced. Highly recommend!",
     image: "/user.jpg",
     star: 5,
   },
