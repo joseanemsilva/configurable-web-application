@@ -38,7 +38,6 @@ const NavBar: React.FC = () => {
                 "flex",
                 "absolute",
                 "top-[60px]",
-                "bg-gray-800",
                 "w-full",
                 "left-0",
                 "p-4",
@@ -56,13 +55,13 @@ const NavBar: React.FC = () => {
     }
 
     return (
-        <nav className="bg-gray-800 text-white p-4 sm:p-6 md:flex md:justify-between md:items-center">
+        <nav className=" text-primary p-4 sm:p-6 md:flex md:justify-between md:items-center">
             <div className="container mx-auto flex justify-between items-center">
                 <a href="/" className="text-2xl font-bold"> Logo</a>
                 <ul className={getMenuClasses()}>
                     {navItems.map((link) => (
                         <li key={link.label}>
-                            <Link href={link.href}  className="mx-2 hover:text-gray-300">
+                            <Link href={link.href}  className="mx-2 font-semibold hover:text-accent3">
                                 {link.label}
                             </Link>
                         </li>
@@ -71,9 +70,9 @@ const NavBar: React.FC = () => {
                 <div className="md:hidden flex items-center">
                     <button onClick={() => {setIsOpen(!isOpen)}}>
                         {isOpen ? (
-                            <FaXmark className="size-6 text-red"/>
+                            <FaXmark className="size-6 text-accent3"/>
                         ) : (
-                             <FaBars className="size-6 text-red"/> )}
+                             <FaBars className="size-6 text-accent3"/> )}
                     </button>
                 </div>
             </div>
