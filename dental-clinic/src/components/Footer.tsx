@@ -1,11 +1,8 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
 
-
-
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <>
             <footer className="relative z-10 bg-primary pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24">

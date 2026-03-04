@@ -1,6 +1,7 @@
 import { IoLocationOutline, IoMailOutline, IoCallOutline } from "react-icons/io5";
 import { BsClock } from "react-icons/bs";
 import React from "react";
+import SectionTitle from "../Common/SectionTitle";
 
 interface ContentType {
     id: number;
@@ -38,7 +39,7 @@ const contents: ContentType[] = [
 
 const Contact = () => {
     return (
-        <section id="contact" className="relative py-20 md:py-[120px]">
+        <section id="contact" className="relative py-16 px-8 md:py-[120px]">
             <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
             <div className="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-accent2 dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
             <div className="container px-4 mx-auto">
@@ -47,16 +48,10 @@ const Contact = () => {
                         <div className="">
 
                             <div className="mb-12 lg:mb-[150px]">
-                                <div className="max-w-xl">
-                                    <h2 className="lg:text-5xl font-bold tracking-tight text-pretty text-black sm:text-4xl">
-                                        Contact Us
-                                    </h2>
-                                    <p className="mt-6 text-lg/8 text-black">
-                                        We are here to help you with any questions. Please feel free
-                                        to reach out to us through any of the contact methods below,
-                                        and we will get back to you as soon as possible.
-                                    </p>
-                                </div>
+                                <SectionTitle
+                                    title="Contact Us"
+                                    paragraph="We are here to help you with any questions. Please feel free to reach out to us through any of the contact methods below, and we will get back to you as soon as possible."
+                                />
                             </div>
 
                             <div className="mb-12 flex flex-wrap justify-between lg:mb-0">

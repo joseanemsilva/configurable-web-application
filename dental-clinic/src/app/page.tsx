@@ -1,9 +1,9 @@
-import Hero from "@/components/hero/Hero";
-import EngageSection from "@/components/EngageSection";
-import ServiceSection from "@/components/ServiceSection";
-import PaymentPlanSection from "@/components/PaymentPlanSection";
-import Testimonials from "@/components/Testimonials";
-import Contact from "@/components/Contact";
+import Hero from "@/components/Hero";
+import EngageSection from "@/components/Content/VisionSection";
+import ServiceSection from "@/components/Content/ServiceSection";
+import PaymentPlanSection from "@/components/Content/PaymentPlanSection";
+import Testimonials from "@/components/Testimonials/index";
+import Contact from "@/components/Contact/Contact";
 
 export default function Home() {
   return (

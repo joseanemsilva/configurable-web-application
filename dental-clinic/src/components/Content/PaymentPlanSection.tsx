@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SectionTitle from "../Common/SectionTitle";
 
 
 interface ContentType {
@@ -33,11 +34,13 @@ const contents: ContentType[] = [
 
 const PaymentPlanSection: React.FC = () => {
     return (
-        <section className="bg-accent2 text-white lg:py-20 md:py-32">
-            <div className="container mx-auto text-center max-w-5xl">
-                <h2 className="lg:text-5xl text-black font-bold mb-6 sm:text-4xl"> Affordable Smile to Everyone </h2>
-                <p className=" text-black"> We offer a variety of payment options designed to fit your unique household budget. </p>
-            </div>
+        <section className="bg-accent2 text-white lg:py-20 md:py-32 py-16 px-8">
+            <SectionTitle
+                title="Affordable Smile to Everyone"
+                paragraph="We offer a variety of payment options designed to fit your unique household budget."
+                center
+            />
+            
             <div className="sm:py-20">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">

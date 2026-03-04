@@ -1,4 +1,5 @@
 import { FaTooth } from "react-icons/fa";
+import SectionTitle from "../Common/SectionTitle";
 
 interface ContentType {
     id: number,
@@ -15,12 +16,14 @@ const contents: ContentType[] = [
 
 const EngageSection: React.FC = () => {
     return (
-        <section className="bg-accent2 text-white lg:py-20 md:py-32">
-            <div className="container mx-auto text-center max-w-5xl">
-                <h2 className="lg:text-5xl text-black font-bold mb-6 sm:text-4xl">Dental Care For Everyone</h2>
-                <p className=" text-black">We believe clear communication is the foundation of great healthcare. Our dedicated team is proud to offer services in both English and Portuguese, ensuring you feel heard, understood, and comfortable throughout your entire treatment. Schedule your visit today!</p>
-            </div>
-            <div className="sm:py-20">
+        <section className="bg-accent2 text-white lg:py-20 md:py-32 py-16 px-8">
+            <SectionTitle
+                title="Our Mission"
+                paragraph="We believe clear communication is the foundation of great healthcare. Our dedicated team is proud to offer services in both English and Portuguese, ensuring you feel heard, understood, and comfortable throughout your entire treatment. Schedule your visit today!"
+                center
+            />
+
+            <div className="">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
                         {contents.map((content) => (
