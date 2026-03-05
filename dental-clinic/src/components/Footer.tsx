@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
                 <div className="container mx-auto">
                     <div className="-mx-4 flex flex-wrap justify-center">
                         <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-4/12">
-                            <div className=" px-4 mb-12 max-w-[360px] lg:mb-16">
+                            <div className=" px-4 mb-12 max-w-90 lg:mb-16">
                                 {/* Logo */}
                                 <a href="/" className="text-2xl font-bold text-white"> Logo </a>
                                 <p className="mt-5 mb-5 text-base leading-relaxed text-accent1 dark:text-accent1-dark">

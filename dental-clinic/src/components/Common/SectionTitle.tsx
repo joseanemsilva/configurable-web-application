@@ -1,7 +1,7 @@
 
 const SectionTitle: React.FC <{
   title: string;
-  paragraph: string;
+  paragraph?: string;
   width?: string;
   center?: boolean;
   mb?: string;
@@ -14,7 +14,7 @@ const SectionTitle: React.FC <{
   
 }: {
   title: string;
-  paragraph: string;
+  paragraph?: string;
   width?: string;
   center?: boolean;
   mb?: string;

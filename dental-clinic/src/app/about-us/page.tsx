@@ -1,9 +1,14 @@
+import Heading from "@/components/About/Heading";
+import Team from "@/components/About/Team";
+import ClosingSection from "@/components/Common/CtaSection";
 
 
 export default function AboutUsPage() {
     return (
         <main>
-            <h2> About Us </h2>
+            <Heading/>
+            <Team/>
+            <ClosingSection/>
         </main>
     );
 }

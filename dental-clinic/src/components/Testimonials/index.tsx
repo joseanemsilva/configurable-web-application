@@ -36,7 +36,7 @@ const testimonialData: Testimonial[] = [
   },
 ];
 
-const Testimonials = () => {
+const Testimonials: React.FC = () => {
   return (
     <section className="dark:bg-bg-color-dark bg-gray-light relative z-10 md:py-20 lg:py-28 px-8 py-16">
       <div className="container mx-auto">
