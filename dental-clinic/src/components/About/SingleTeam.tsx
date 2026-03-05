@@ -14,7 +14,8 @@ const SingleTeam = ({ team }: { team: TeamType }) => {
     const { image, name, designation, bio } =
         team;
     return (
-        <section className="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
+        <>
+        <div className="w-full px-4 sm:w-1/2 lg:w-1/4 xl:w-1/4">
             <div className="group mb-8 rounded-xl bg-white pb-4 pt-12 dark:bg-dark dark:shadow-none shadow-sm">
 
                 <div className="relative z-10 mx-auto mb-16 h-50 w-50">
@@ -39,7 +40,8 @@ const SingleTeam = ({ team }: { team: TeamType }) => {
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
+        </>
     );
 };
 
