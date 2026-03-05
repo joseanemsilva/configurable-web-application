@@ -44,10 +44,10 @@ const Team: React.FC = () => {
   return (
     <section
       id="team"
-      className="overflow-hidden bg-gray-1 pb-12 pt-20 dark:bg-dark-2 lg:pb-[90px] lg:pt-[120px]"
+      className="overflow-hidden bg-gray-1 pb-12 pt-20 dark:bg-dark-2 lg:pb-22.5 lg:pt-30"
     >
       <div className="container mx-auto">
-        <div className="mb-[60px] text-justify">
+        <div className="mb-15 text-justify">
           <SectionTitle
             title="Meet Our Team"
             paragraph="Our team of dedicated professionals is here to provide you with exceptional dental care. With a passion for creating healthy smiles and a commitment to patient comfort, we work together to ensure that every visit is a positive experience. We offer services in both English and Portuguese, making it easier for our diverse community to access the care they need. Get to know the friendly faces behind our practice and discover how we can help you achieve your best smile."
