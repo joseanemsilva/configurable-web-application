@@ -14,20 +14,20 @@ const contents: ContentType[] = [
     {
         id: 1,
         icon: <IoCallOutline />,
-        title: 'Call Us',
+        title: 'Phone Number',
         paragraph: '+1 (234) 567-8901'
     },
     {
         id: 2,
         icon: <IoMailOutline />,
-        title: 'Email Us',
+        title: 'Email Address',
         paragraph: 'dentalClinic@toronto.ca'
     },
     {
         id: 4,
         icon: <IoLocationOutline />,
         title: 'Our Location',
-        paragraph: '401 Smile, 1st Floor, Toronto, ON - Canada'
+        paragraph: '51 Dockside Dr, Toronto, ON M5A 0B6'
     },
     {
         id: 3,
