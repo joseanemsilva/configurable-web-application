@@ -1,7 +1,6 @@
 "use client";
-
 import Link from "next/link";
-import { useState } from "react";
+import {useState, useCallback } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 
 interface NavLinkType {
@@ -30,50 +29,33 @@ const navItems: NavLinkType[] = [
 
 const NavBar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const toggle = useCallback(() => {
+	    setIsOpen(!isOpen);
+	}, [setIsOpen, isOpen]);
+    const closeMenu = useCallback(() => {
+        setIsOpen(false);
+    }, [setIsOpen]);
 
-    function getMenuClasses() {
-        let menuClasses = [];
-        if(isOpen) {
-            menuClasses = [
-                "flex",
-                "absolute",
-                "top-[60px]",
-                "w-full",
-                "left-0",
-                "p-4",
-                "gap-10",
-                "flex-col"
-            ];
-        } else {
-            menuClasses = [
-                "hidden",
-                "md:flex",
-            ];
-        }
-
-        return menuClasses.join(" ");
-    }
-
-    return (
-        <nav className=" text-primary p-4 sm:p-6 md:flex md:justify-between md:items-center">
-            <div className="container mx-auto flex justify-between items-center">
-                <a href="/" className="text-2xl font-bold"> Logo</a>
-                <ul className={getMenuClasses()}>
+	return (
+        <nav className="text-primary p-4 sm:p-6">
+            <div className="container mx-auto">
+                <div className="flex items-center justify-between">
+                    <a href="/" className="text-2xl font-bold">Logo</a>
+                    <div className="md:hidden flex items-center">
+                        <button onClick={toggle} aria-label="Toggle navigation menu">
+                            {isOpen ? (
+                                <FaXmark className="size-6 text-primary" />
+                            ) : (
+                                <FaBars className="size-6 text-primary" />)}
+                        </button>
+                    </div>
+                </div>
+                <div className={`${isOpen ? "mt-4 flex" : "hidden"} flex-col gap-3 md:mt-0 md:flex md:flex-row md:items-center md:justify-end md:gap-4`}>
                     {navItems.map((link) => (
-                        <li key={link.label}>
-                            <Link href={link.href}  className="mx-2 font-semibold hover:text-accent3">
-                                {link.label}
-                            </Link>
-                        </li>
+                        <Link onClick={closeMenu} key={link.href} href={link.href} className="font-semibold hover:text-accent3">
+                            {link.label}
+                        </Link>
                     ))}
-                </ul>
-                <div className="md:hidden flex items-center">
-                    <button onClick={() => {setIsOpen(!isOpen)}}>
-                        {isOpen ? (
-                            <FaXmark className="size-6 text-accent3"/>
-                        ) : (
-                             <FaBars className="size-6 text-accent3"/> )}
-                    </button>
                 </div>
             </div>
         </nav>
