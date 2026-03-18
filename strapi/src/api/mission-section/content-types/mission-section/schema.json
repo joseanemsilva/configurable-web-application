@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "mission_sections",
+  "info": {
+    "singularName": "mission-section",
+    "pluralName": "mission-sections",
+    "displayName": "MissionSection"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "component",
+      "component": "shared.section-title",
+      "repeatable": false,
+      "required": true
+    },
+    "contents": {
+      "type": "component",
+      "component": "shared.content",
+      "repeatable": true
+    }
+  }
+}

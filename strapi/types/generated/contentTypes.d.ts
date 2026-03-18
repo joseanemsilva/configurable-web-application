@@ -464,6 +464,102 @@ export interface ApiHeroSectionHeroSection extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMissionSectionMissionSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'mission_sections';
+  info: {
+    displayName: 'MissionSection';
+    pluralName: 'mission-sections';
+    singularName: 'mission-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contents: Schema.Attribute.Component<'shared.content', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mission-section.mission-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionTitle: Schema.Attribute.Component<'shared.section-title', false> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPaymentPlanSectionPaymentPlanSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'payment_plan_sections';
+  info: {
+    displayName: 'PaymentPlanSection';
+    pluralName: 'payment-plan-sections';
+    singularName: 'payment-plan-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::payment-plan-section.payment-plan-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionTitle: Schema.Attribute.Component<'shared.section-title', false> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceSectionServiceSection
+  extends Struct.SingleTypeSchema {
+  collectionName: 'service_sections';
+  info: {
+    displayName: 'ServiceSection';
+    pluralName: 'service-sections';
+    singularName: 'service-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaPrimary: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service-section.service-section'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionTitle: Schema.Attribute.Component<'shared.section-title', false> &
+      Schema.Attribute.Required;
+    serviceImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -976,6 +1072,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::hero-section.hero-section': ApiHeroSectionHeroSection;
+      'api::mission-section.mission-section': ApiMissionSectionMissionSection;
+      'api::payment-plan-section.payment-plan-section': ApiPaymentPlanSectionPaymentPlanSection;
+      'api::service-section.service-section': ApiServiceSectionServiceSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
