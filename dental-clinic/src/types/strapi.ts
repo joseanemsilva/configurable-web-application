@@ -65,3 +65,30 @@ export interface TestimonialData {
     sectionTitle: SectionTitleData;
     testimonials: SingleTestimonial[];
 }
+
+export interface ContactInfo {
+    id: number;
+    // icon: string;
+    title: string;
+    paragraph: string;
+}
+
+export interface InputField {
+    label: string;
+    placeholder: string;
+}
+
+export interface ContactForm {
+    title: string;
+    fullName: InputField;
+    email: InputField;
+    phoneNumber: InputField;
+    message: InputField;
+    submit: string;
+}
+
+export interface ContactData {
+    sectionTitle: SectionTitleData;
+    contactInfo: ContactInfo[];
+    contactForm: ContactForm;
+}

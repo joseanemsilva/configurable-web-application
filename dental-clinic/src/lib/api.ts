@@ -1,4 +1,4 @@
-import { type MissionData, type ServiceSectionData, type HeroData, type StrapiResponse, type PaymentPlanData, type TestimonialData } from "../types/strapi";
+import { type MissionData, type ServiceSectionData, type HeroData, type StrapiResponse, type PaymentPlanData, type TestimonialData, ContactData } from "../types/strapi";
 
 const baseurl = process.env.STRAPI_URL || 'http://localhost:1337';
 
@@ -18,6 +18,7 @@ export async function fetchAPI<T>(path: string, options: RequestInit = {}) : Pro
         throw new Error(`API error: ${response.status} ${response.statusText}`);
     }
     const data = await response.json();
+    console.log(path,"API Response:", JSON.stringify(data, null, 2));
     return data;
 }
 
@@ -42,9 +43,13 @@ export async function getPaymentPlanSection(): Promise<PaymentPlanData> {
     return response.data as PaymentPlanData;
 }
 
-
 // Export a helper function to fetch testimonials from Strapi
 export async function getTestimonials(): Promise<TestimonialData> {
     const response = await fetchAPI('/testimonial-section?populate[testimonials][populate][0]=image&populate[sectionTitle]=*');
     return response.data as TestimonialData;
+}
+
+export async function getContact(): Promise<ContactData> {
+    const response = await fetchAPI('/contact?populate[sectionTitle]=*&populate[contactInfo]=*&populate[contactForm][populate][0]=fullName&populate[contactForm][populate][1]=email&populate[contactForm][populate][2]=phoneNumber&populate[contactForm][populate][3]=message');
+    return response.data as ContactData;
 }

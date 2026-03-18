@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_input_fields",
+  "info": {
+    "displayName": "InputField"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
