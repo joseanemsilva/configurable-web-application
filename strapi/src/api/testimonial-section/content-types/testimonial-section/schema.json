@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "payment_plan_sections",
+  "collectionName": "testimonial_sections",
   "info": {
-    "singularName": "payment-plan-section",
-    "pluralName": "payment-plan-sections",
-    "displayName": "PaymentPlanSection"
+    "singularName": "testimonial-section",
+    "pluralName": "testimonial-sections",
+    "displayName": "Testimonials"
   },
   "options": {
     "draftAndPublish": true
@@ -14,12 +14,11 @@
     "sectionTitle": {
       "type": "component",
       "component": "shared.section-title",
-      "repeatable": false,
-      "required": true
+      "repeatable": false
     },
-    "contents": {
+    "testimonials": {
       "type": "component",
-      "component": "shared.cta-content",
+      "component": "shared.single-testimonial",
       "repeatable": true
     }
   }

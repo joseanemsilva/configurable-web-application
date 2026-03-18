@@ -40,15 +40,28 @@ export interface ServiceSectionData {
     serviceImage: {url: string; alternativeText: string};
 }
 
-export interface PaymentPlanData {
-    sectionTitle: SectionTitleData;
+export interface CtaContent {
+    id: number;
+    title: string;
+    description: string;
+    ctaPrimary: string;
+    link: string;
 }
 
+export interface PaymentPlanData {
+    sectionTitle: SectionTitleData;
+    contents: CtaContent[];
+}
 
-export interface TestimonialData {
+export interface SingleTestimonial {
     id: number;
     authorName: string;
     quote: string;
     image?: {url: string; alternativeText: string};
     rating: number;
+}
+
+export interface TestimonialData {
+    sectionTitle: SectionTitleData;
+    testimonials: SingleTestimonial[];
 }
