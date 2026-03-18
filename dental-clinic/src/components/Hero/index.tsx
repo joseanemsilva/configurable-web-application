@@ -8,7 +8,6 @@ export default function HeroSection({ data }: { data: HeroData }) {
             <Image
                 src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${data.heroImage.url}`}
                 alt={data.heroImage.alternativeText || "Dental Clinic Image"}
-                quality={85}
                 fill
                 priority
                 className="object-cover object-center opacity-50 -z-10"

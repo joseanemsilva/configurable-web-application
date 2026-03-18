@@ -1,20 +1,17 @@
+import { type SectionTitleData  } from "@/types/strapi";
 
 const SectionTitle: React.FC <{
-  title: string;
-  paragraph?: string;
+  sectionTitleData: SectionTitleData;
   width?: string;
   center?: boolean;
   mb?: string;
 }> = ({
-  title,
-  paragraph,
+  sectionTitleData,
   width = "700px",
   center,
   mb = "60px",
-  
 }: {
-  title: string;
-  paragraph?: string;
+  sectionTitleData: SectionTitleData;
   width?: string;
   center?: boolean;
   mb?: string;
@@ -24,10 +21,10 @@ const SectionTitle: React.FC <{
         <div className={`w-full ${center ? "mx-auto" : ""}`}
         style={{ maxWidth: width, marginBottom: mb }} >
             <h2 className="mb-4 text-3xl font-bold leading-tight! text-black dark:text-white sm:text-4xl md:text-[45px] text-center">
-                {title}
+                {sectionTitleData.title}
             </h2>
             <p className="text-base leading-relaxed! text-black md:text-lg">
-                {paragraph}
+                {sectionTitleData.description}
             </p>
         </div>
     </>
