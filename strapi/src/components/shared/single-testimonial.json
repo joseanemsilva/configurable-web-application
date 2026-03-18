@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_single_testimonials",
+  "info": {
+    "displayName": "SingleTestimonial"
+  },
+  "options": {},
+  "attributes": {
+    "authorName": {
+      "type": "string",
+      "required": true
+    },
+    "quote": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "rating": {
+      "type": "integer",
+      "required": true
+    }
+  },
+  "config": {}
+}
