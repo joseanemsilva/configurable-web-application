@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_team_cards",
+  "info": {
+    "displayName": "TeamCard"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bio": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

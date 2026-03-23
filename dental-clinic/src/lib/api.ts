@@ -1,4 +1,4 @@
-import { type MissionData, type ServiceSectionData, type HeroData, type StrapiResponse, type PaymentPlanData, type TestimonialData, ContactData } from "../types/strapi";
+import { type MissionData, type ServiceSectionData, type HeroData, type StrapiResponse, type PaymentPlanData, type TestimonialData, type ContactData, type AboutUsData} from "../types/strapi";
 
 const baseurl = process.env.STRAPI_URL || 'http://localhost:1337';
 
@@ -52,4 +52,10 @@ export async function getTestimonials(): Promise<TestimonialData> {
 export async function getContact(): Promise<ContactData> {
     const response = await fetchAPI('/contact?populate[sectionTitle]=*&populate[contactInfo]=*&populate[contactForm][populate][0]=fullName&populate[contactForm][populate][1]=email&populate[contactForm][populate][2]=phoneNumber&populate[contactForm][populate][3]=message');
     return response.data as ContactData;
+}
+
+export async function getAboutUs(): Promise<AboutUsData> {
+    const response = await fetchAPI('/about-us?populate[heading]=*&&populate[team][populate][sectionTitle]=*&populate[team][populate][teamCards][populate][image][fields][0]=url&populate[team][populate][teamCards][populate][image][fields][1]=alternativeText&populate[ctaSection]=*')
+
+    return response.data as AboutUsData;
 }

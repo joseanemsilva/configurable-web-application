@@ -1,6 +1,3 @@
-import Hero from "@/components/Hero";
-import EngageSection from "@/components/Content/MissionSection";
-
 import { getServiceSection, getHeroSection, getMissionSection, getPaymentPlanSection, getTestimonials, getContact } from "@/lib/api";
 import HeroSection from "@/components/Hero";
 import MissionSection from "@/components/Content/MissionSection";
