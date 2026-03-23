@@ -20,7 +20,7 @@ export interface HeroData {
 export interface SectionTitleData {
     id: number;
     title: string;
-    description: string;
+    description?: string;
 }
 
 export interface Content {
@@ -40,10 +40,7 @@ export interface ServiceSectionData {
     serviceImage: {url: string; alternativeText: string};
 }
 
-export interface CtaContent {
-    id: number;
-    title: string;
-    description: string;
+export interface CtaContent extends SectionTitleData {
     ctaPrimary: string;
     link: string;
 }
@@ -91,4 +88,27 @@ export interface ContactData {
     sectionTitle: SectionTitleData;
     contactInfo: ContactInfo[];
     contactForm: ContactForm;
+}
+
+export interface HeadingData extends SectionTitleData {
+    longDescription: string;
+}
+
+export interface TeamCard {
+    id: number;
+    name: string;
+    role: string;
+    bio: string;
+    image: {url: string; alternativeText: string};
+}
+
+export interface Team {
+    sectionTitle: SectionTitleData;
+    teamCards: TeamCard[];
+}
+
+export interface AboutUsData {
+    heading: HeadingData;
+    team: Team;
+    ctaSection: CtaContent;
 }

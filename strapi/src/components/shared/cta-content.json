@@ -5,7 +5,7 @@
   },
   "options": {},
   "attributes": {
-    "tittle": {
+    "title": {
       "type": "string",
       "required": true
     },

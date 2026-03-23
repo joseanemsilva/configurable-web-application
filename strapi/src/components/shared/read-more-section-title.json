@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_shared_section_titles",
+  "collectionName": "components_shared_read_more_section_titles",
   "info": {
-    "displayName": "SectionTitle"
+    "displayName": "ReadMoreSectionTitle"
   },
   "options": {},
   "attributes": {
@@ -9,7 +9,7 @@
       "type": "string",
       "required": true
     },
-    "description": {
+    "longDescription": {
       "type": "text"
     }
   },

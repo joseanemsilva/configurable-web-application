@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_teams",
+  "info": {
+    "displayName": "Team"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "component",
+      "component": "shared.section-title",
+      "repeatable": false
+    },
+    "teamCards": {
+      "type": "component",
+      "component": "shared.team-card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

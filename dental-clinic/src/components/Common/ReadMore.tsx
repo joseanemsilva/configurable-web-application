@@ -1,12 +1,13 @@
 import { useState } from "react";
 
 interface ReadMoreProps {
-    id?: string,
+    aria: string,
     text: string,
     maxLength?: number
 }
 
-export const ReadMore = ({ id, text, maxLength = 36 }: ReadMoreProps) => {
+export const ReadMore = ({ aria, text, maxLength = 36 }: ReadMoreProps) => {
+
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleReadMore = () => {
@@ -27,7 +28,7 @@ export const ReadMore = ({ id, text, maxLength = 36 }: ReadMoreProps) => {
                         className = "rounded-4xl px-6 py-2 text-base font-semibold btn bg-primary text-background duration-300 ease-in-out hover:bg-primary/80 mb-6 cursor-pointer"
                         type="button"
                         onClick={toggleReadMore}
-                        aria-controls={id}
+                        aria-controls={aria}
                         aria-expanded={isExpanded}
                         >
                         {isExpanded ? 'Read Less' : 'Read More'}
