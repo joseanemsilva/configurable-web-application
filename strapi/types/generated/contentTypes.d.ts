@@ -487,6 +487,7 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
       'api::contact.contact'
     > &
       Schema.Attribute.Private;
+    maps: Schema.Attribute.Component<'shared.maps', false>;
     publishedAt: Schema.Attribute.DateTime;
     sectionTitle: Schema.Attribute.Component<'shared.section-title', false>;
     updatedAt: Schema.Attribute.DateTime;

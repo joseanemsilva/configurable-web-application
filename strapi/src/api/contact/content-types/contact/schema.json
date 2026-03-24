@@ -25,6 +25,11 @@
       "type": "component",
       "component": "shared.contact-form",
       "repeatable": false
+    },
+    "maps": {
+      "type": "component",
+      "component": "shared.maps",
+      "repeatable": false
     }
   }
 }
