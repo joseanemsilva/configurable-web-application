@@ -7,7 +7,6 @@ interface CtaSectionProps {
 }
 
 export default function CtaSection({ ctaSection }: CtaSectionProps) {
-    console.log("CTA:", ctaSection)
     return (
         <section className="bg-accent1 relative z-10 py-16 md:py-20 lg:py-28">
             <div className="container mx-auto">

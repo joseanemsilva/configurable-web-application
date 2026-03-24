@@ -112,3 +112,25 @@ export interface AboutUsData {
     team: Team;
     ctaSection: CtaContent;
 }
+
+export interface Service {
+    id: number;
+    service: string;
+}
+
+export interface MyImage {
+    url: string;
+    alternativeText: string
+}
+export interface ServiceCard {
+    id: number;
+    sectionTitle: SectionTitleData;
+    serviceList: Service[];
+    image: MyImage;
+}
+
+export interface ServicesData {
+    sectionTitle: SectionTitleData;
+    serviceCards: ServiceCard[];
+    ctaSection: CtaContent;
+}
