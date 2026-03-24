@@ -78,6 +78,40 @@ export interface SharedSectionTitle extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedServiceCard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_service_cards';
+  info: {
+    displayName: 'ServiceCard';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    sectionTitle: Schema.Attribute.Component<'shared.section-title', false>;
+    serviceList: Schema.Attribute.Component<'shared.service-list', true>;
+  };
+}
+
+export interface SharedServiceCardList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_service_card_lists';
+  info: {
+    displayName: 'ServiceCardList';
+  };
+  attributes: {
+    serviceType: Schema.Attribute.Component<'shared.service-list', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface SharedServiceList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_service_lists';
+  info: {
+    displayName: 'ServiceType';
+  };
+  attributes: {
+    service: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSingleTestimonial extends Struct.ComponentSchema {
   collectionName: 'components_shared_single_testimonials';
   info: {
@@ -126,6 +160,9 @@ declare module '@strapi/strapi' {
       'shared.input-field': SharedInputField;
       'shared.read-more-section-title': SharedReadMoreSectionTitle;
       'shared.section-title': SharedSectionTitle;
+      'shared.service-card': SharedServiceCard;
+      'shared.service-card-list': SharedServiceCardList;
+      'shared.service-list': SharedServiceList;
       'shared.single-testimonial': SharedSingleTestimonial;
       'shared.team': SharedTeam;
       'shared.team-card': SharedTeamCard;

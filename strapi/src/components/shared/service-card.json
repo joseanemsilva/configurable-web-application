@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_service_cards",
+  "info": {
+    "displayName": "ServiceCard"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sectionTitle": {
+      "type": "component",
+      "component": "shared.section-title",
+      "repeatable": false
+    },
+    "serviceList": {
+      "type": "component",
+      "component": "shared.service-list",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,5 +1,3 @@
-import ClosingSection from "@/components/Common/CtaSection";
-
 import { getAboutUs } from "@/lib/api";
 import Heading from "@/components/About/Heading";
 import Team from "@/components/About/Team";

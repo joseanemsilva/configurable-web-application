@@ -626,6 +626,38 @@ export interface ApiServiceSectionServiceSection
   };
 }
 
+export interface ApiServiceService extends Struct.SingleTypeSchema {
+  collectionName: 'services';
+  info: {
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ctaSection: Schema.Attribute.Component<'shared.cta-content', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionTitle: Schema.Attribute.Component<'shared.section-title', false> &
+      Schema.Attribute.Required;
+    serviceCards: Schema.Attribute.Component<'shared.service-card', true> &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialSectionTestimonialSection
   extends Struct.SingleTypeSchema {
   collectionName: 'testimonial_sections';
@@ -1173,6 +1205,7 @@ declare module '@strapi/strapi' {
       'api::mission-section.mission-section': ApiMissionSectionMissionSection;
       'api::payment-plan-section.payment-plan-section': ApiPaymentPlanSectionPaymentPlanSection;
       'api::service-section.service-section': ApiServiceSectionServiceSection;
+      'api::service.service': ApiServiceService;
       'api::testimonial-section.testimonial-section': ApiTestimonialSectionTestimonialSection;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

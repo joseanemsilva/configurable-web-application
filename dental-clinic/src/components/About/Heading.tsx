@@ -2,7 +2,7 @@
 
 import SectionTitle from "../Common/SectionTitle";
 import { ReadMore } from "../Common/ReadMore";
-import { HeadingData } from "@/types/strapi";
+import { type HeadingData } from "@/types/strapi";
 
 
 interface HeadingProps {
