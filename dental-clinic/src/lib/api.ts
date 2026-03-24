@@ -50,7 +50,7 @@ export async function getTestimonials(): Promise<TestimonialData> {
 }
 
 export async function getContact(): Promise<ContactData> {
-    const response = await fetchAPI('/contact?populate[sectionTitle]=*&populate[contactInfo]=*&populate[contactForm][populate][0]=fullName&populate[contactForm][populate][1]=email&populate[contactForm][populate][2]=phoneNumber&populate[contactForm][populate][3]=message');
+    const response = await fetchAPI('/contact?populate[sectionTitle]=*&populate[contactInfo]=*&populate[contactForm][populate][0]=fullName&populate[contactForm][populate][1]=email&populate[contactForm][populate][2]=phoneNumber&populate[contactForm][populate][3]=message&populate[maps][populate]=*');
     return response.data as ContactData;
 }
 

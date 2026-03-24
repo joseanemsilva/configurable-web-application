@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_maps",
+  "info": {
+    "displayName": "Maps"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "component",
+      "component": "shared.section-title",
+      "repeatable": false
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

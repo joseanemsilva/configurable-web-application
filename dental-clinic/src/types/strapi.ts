@@ -67,7 +67,7 @@ export interface ContactInfo {
     id: number;
     // icon: string;
     title: string;
-    paragraph: string;
+    description: string;
 }
 
 export interface InputField {
@@ -84,10 +84,16 @@ export interface ContactForm {
     submit: string;
 }
 
+export interface Maps {
+    sectionTitle: SectionTitleData;
+    location: string;
+}
+
 export interface ContactData {
     sectionTitle: SectionTitleData;
     contactInfo: ContactInfo[];
     contactForm: ContactForm;
+    maps: Maps;
 }
 
 export interface HeadingData extends SectionTitleData {

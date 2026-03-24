@@ -56,6 +56,17 @@ export interface SharedInputField extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMaps extends Struct.ComponentSchema {
+  collectionName: 'components_shared_maps';
+  info: {
+    displayName: 'Maps';
+  };
+  attributes: {
+    location: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.Component<'shared.section-title', false>;
+  };
+}
+
 export interface SharedReadMoreSectionTitle extends Struct.ComponentSchema {
   collectionName: 'components_shared_read_more_section_titles';
   info: {
@@ -158,6 +169,7 @@ declare module '@strapi/strapi' {
       'shared.content': SharedContent;
       'shared.cta-content': SharedCtaContent;
       'shared.input-field': SharedInputField;
+      'shared.maps': SharedMaps;
       'shared.read-more-section-title': SharedReadMoreSectionTitle;
       'shared.section-title': SharedSectionTitle;
       'shared.service-card': SharedServiceCard;
