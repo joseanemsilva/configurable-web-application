@@ -5,6 +5,7 @@ import ServiceSection from "@/components/Content/ServiceSection";
 import PaymentPlanSection from "@/components/Content/PaymentPlanSection";
 import Testimonials from "@/components/Testimonials/index";
 import Contact from "@/components/Contact/Contact";
+import ErrorPage from "@/components/Common/ErrorPage";
 
 interface HomePageProps {
   hero: any;
@@ -13,6 +14,7 @@ interface HomePageProps {
   paymentPlan: any;
   testimonials: any;
   contact: any;
+  error: boolean;
 }
 
 async function getPageData(): Promise<HomePageProps> {
@@ -33,6 +35,7 @@ async function getPageData(): Promise<HomePageProps> {
       paymentPlan: paymentPlanRes,
       testimonials: testimonialsRes,
       contact: contactRes,
+      error: false,
     };
   } catch (error) {
     console.error("Error fetching page data:", error);
@@ -43,6 +46,7 @@ async function getPageData(): Promise<HomePageProps> {
       paymentPlan: null,
       testimonials: null,
       contact: null,
+      error:true,
     };
   }
 }
@@ -52,12 +56,13 @@ export default async function HomePage() {
 
   return (
     <main>
+      {pageData.error && <ErrorPage/>}
       {pageData.hero && <HeroSection data={pageData.hero} />}
       {pageData.mission && <MissionSection mission={pageData.mission} />}
       {pageData.service && <ServiceSection service={pageData.service} />}
       {pageData.paymentPlan && <PaymentPlanSection paymentPlan={pageData.paymentPlan} />}
       {pageData.testimonials && <Testimonials testimonials={pageData.testimonials}/>}
       {pageData.contact && <Contact contact={pageData.contact}/>}
-    </main>
+      </main>
   );
 }
