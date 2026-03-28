@@ -49,3 +49,31 @@ test('should navigate to services page when clicking the schedule visit button',
   await expect(page).toHaveURL('http://localhost:3000/services')
   await expect(page.getByRole('heading', {name: "Our Services", level: 2})).toBeVisible();
 });
+
+
+/**
+ * Test for mobile navigation toggle 
+ */
+test.describe('Mobile', () => {
+  test.use({
+    viewport: {width:390, height:844},
+    //isMobile: true,
+    hasTouch: true,
+  })
+
+  test('toggle button displays and hides menu', async({page}) => {
+    await page.goto('http://localhost:3000/')
+    
+    const menu = page.getByTestId('menu');
+    const toggleMenu = page.getByRole('button', {name:'Toggle navigation menu'});
+
+    await expect(menu).toBeHidden();
+
+    await toggleMenu.click();
+    await expect(menu).toBeVisible();
+
+    await toggleMenu.click();
+    await expect(menu).toBeHidden();
+});
+});
+

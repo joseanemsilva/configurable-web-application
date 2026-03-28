@@ -42,7 +42,7 @@ const NavBar: React.FC = () => {
                 <div className="flex items-center justify-between">
                     <a href="/" className="text-2xl font-bold">Logo</a>
                     <div className="md:hidden flex items-center">
-                        <button onClick={toggle} aria-label="Toggle navigation menu">
+                        <button role="button" onClick={toggle} aria-label="Toggle navigation menu">
                             {isOpen ? (
                                 <FaXmark className="size-6 text-primary" />
                             ) : (
@@ -50,9 +50,9 @@ const NavBar: React.FC = () => {
                         </button>
                     </div>
                 </div>
-                <div className={`${isOpen ? "mt-4 flex" : "hidden"} flex-col gap-3 md:mt-0 md:flex md:flex-row md:items-center md:justify-end md:gap-4`}>
+                <div data-testid="menu" className={`${isOpen ? "mt-4 flex" : "hidden"} flex-col gap-3 md:mt-0 md:flex md:flex-row md:items-center md:justify-end md:gap-4`}>
                     {navItems.map((link) => (
-                        <Link onClick={closeMenu} key={link.href} href={link.href} className="font-semibold hover:text-accent3">
+                        <Link role="link" onClick={closeMenu} key={link.href} href={link.href} className="font-semibold hover:text-accent3">
                             {link.label}
                         </Link>
                     ))}
