@@ -27,18 +27,15 @@ export default function ErrorPage({
           />
         </svg>
       </div>
-      
-      {/* Typography / Copy */}
+
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-2">
         {title}
       </h2>
       <p className="text-lg text-gray-500 mb-8 max-w-md">
         {message}
       </p>
-      
-      {/* Call to Actions */}
+
       <div className="flex flex-col sm:flex-row gap-4">
-        {/* Retry Button */}
         <button 
           onClick={() => window.location.reload()}
           className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-semibold btn rounded-4xl text-white bg-primary hover:bg-accent2 transition-colors duration-300 ease-in-out cursor-pointer"
@@ -46,7 +43,6 @@ export default function ErrorPage({
           Try Again
         </button>
       </div>
-      
     </div>
   );
 }
