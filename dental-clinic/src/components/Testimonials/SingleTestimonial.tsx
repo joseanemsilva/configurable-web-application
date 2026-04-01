@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type SingleTestimonial } from "@/types/strapi";
+import { getStrapiMediaUrl } from "@/lib/utils";
 
 interface SingleTestimonialProps {
   singleTestimonial: SingleTestimonial,
@@ -33,7 +34,7 @@ export default function SingleTestimonial({ singleTestimonial }: SingleTestimoni
         <div className="flex items-center">
           <div className="relative mr-4 h-12.5 w-full max-w-12.5 overflow-hidden rounded-full">
             <Image
-              src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${singleTestimonial.image?.url}`}
+              src={getStrapiMediaUrl(singleTestimonial.image?.url)}
               alt={singleTestimonial.image?.alternativeText || "Client Image"}
               fill
               priority

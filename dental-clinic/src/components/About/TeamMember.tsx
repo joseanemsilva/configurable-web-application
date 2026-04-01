@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type TeamCard } from "@/types/strapi";
+import { getStrapiMediaUrl } from "@/lib/utils";
 
 interface TeamCardProps {
     teamCard: TeamCard;
@@ -12,7 +13,7 @@ export default function TeamMember({ teamCard }: TeamCardProps) {
                 <div className="group mb-8 rounded-xl bg-white pb-4 pt-12 dark:bg-dark dark:shadow-none shadow-sm">
                     <div className="relative z-10 mx-auto mb-16 h-50 w-50">
                         <Image
-                            src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${teamCard.image.url}`}
+                            src={getStrapiMediaUrl(teamCard.image.url)}
                             alt={teamCard.image.alternativeText}
                             className="w-full object-cover"
                             width={200}

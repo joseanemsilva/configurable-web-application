@@ -2,6 +2,7 @@ import Link from "next/link";
 import SectionTitle from "../Common/SectionTitle";
 import { type ServiceSectionData } from "@/types/strapi";
 import Image from "next/image";
+import { getStrapiMediaUrl } from "@/lib/utils";
 
 interface ServiceSectionProps {
     service: ServiceSectionData;
@@ -23,7 +24,7 @@ export default function ServiceSection({ service }: ServiceSectionProps) {
                 </div>
                 <div className="size-fit rounded-xl shadow-lg ring-1 ring-gray-900/10">
                     <Image
-                        src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${service.serviceImage.url}`}
+                        src={getStrapiMediaUrl(service.serviceImage.url)}
                         alt={service.serviceImage.alternativeText || "Service Image"}
                         width={800}
                         height={600}

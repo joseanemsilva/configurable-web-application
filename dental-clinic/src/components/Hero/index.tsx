@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { HeroData } from "@/types/strapi";
 import Image from "next/image";
+import { getStrapiMediaUrl } from "@/lib/utils";
 
 export default function HeroSection({ data }: { data: HeroData }) {
     return (
         <section className="relative flex w-screen overflow-hidden min-h-screen items-center justify-center font-sans">
             <Image
-                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${data.heroImage.url}`}
+                src={getStrapiMediaUrl(data.heroImage.url)}
                 alt={data.heroImage.alternativeText}
                 fill
                 preload={true}

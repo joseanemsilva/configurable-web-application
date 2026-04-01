@@ -2,6 +2,7 @@ import { type Service, type MyImage, type SectionTitleData} from "@/types/strapi
 import Image from "next/image";
 import SectionTitle from "../Common/SectionTitle";
 import { FaCheckCircle } from "react-icons/fa";
+import { getStrapiMediaUrl } from "@/lib/utils";
 
 interface ServiceCardProps {
     sectionTitle: SectionTitleData
@@ -55,7 +56,7 @@ export default function ServiceCard( {sectionTitle, services, image, ltr, isLast
                         {/* Image Card */}
                         <div className="w-full px-4 lg:w-1/2">
                             <Image
-                                src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
+                                src={getStrapiMediaUrl(image.url)}
                                 alt={image.alternativeText || "Service Image"}
                                 width={500}
                                 height={500}
