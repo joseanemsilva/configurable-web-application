@@ -8,10 +8,10 @@ interface ContactPageProps {
     contact: ContactData | null;
 }
 
-async function getPageData(): Promise<ContactPageProps> {
+async function getPageData(locale:string): Promise<ContactPageProps> {
     try {
         const [contactRes] = await Promise.all([
-            getContact(),
+            getContact(locale),
         ]);
         return {
             contact: contactRes,
@@ -24,10 +24,10 @@ async function getPageData(): Promise<ContactPageProps> {
     }
 }
 
-export default async function ContactPage() {
-    const pageData = await getPageData();
+export default async function ContactPage({ params }: PageProps<'/[locale]'>) {
+    const {locale} = await params;
+    const pageData = await getPageData(locale);
 
-    console.log("PAGE DATA", pageData)
     return (
         <main>
             {pageData.contact && <Contact contact={pageData.contact}/>}

@@ -6,6 +6,7 @@ import PaymentPlanSection from "@/components/Content/PaymentPlanSection";
 import Testimonials from "@/components/Testimonials/index";
 import Contact from "@/components/Contact/Contact";
 import ErrorPage from "@/components/Common/ErrorPage";
+import { getLocale } from "next-intl/server";
 
 interface HomePageProps {
   hero: any;
@@ -17,15 +18,15 @@ interface HomePageProps {
   error: boolean;
 }
 
-async function getPageData(): Promise<HomePageProps> {
+async function getPageData(locale: string): Promise<HomePageProps> {
   try {
     const [heroRes, missionRes, serviceRes, paymentPlanRes, testimonialsRes, contactRes] = await Promise.all([
-      getHeroSection(),
-      getMissionSection(),
-      getServiceSection(),
-      getPaymentPlanSection(),
-      getTestimonials(),
-      getContact(),
+      getHeroSection(locale),
+      getMissionSection(locale),
+      getServiceSection(locale),
+      getPaymentPlanSection(locale),
+      getTestimonials(locale),
+      getContact(locale),
     ]);
 
     return {
@@ -52,7 +53,8 @@ async function getPageData(): Promise<HomePageProps> {
 }
 
 export default async function HomePage() {
-  const pageData = await getPageData();
+  const locale = await getLocale();
+  const pageData = await getPageData(locale);
 
   return (
     <main>

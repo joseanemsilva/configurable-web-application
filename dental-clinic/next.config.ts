@@ -1,8 +1,9 @@
 import type { NextConfig } from "next";
 
 const isProduction = process.env.NODE_ENV === 'production';
+const withNextIntl = require('next-intl/plugin')('./i18n.ts');
 
-const nextConfig: NextConfig = {
+const nextConfig: NextConfig = withNextIntl({
   "devIndicators": false,
   /* config options here */
   reactCompiler: true,
@@ -26,7 +27,12 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ]
-  }
-};
+  },
+
+  // i18n: {
+  //   locales: ['en', 'pt'],
+  //   defaultLocale: 'en',
+  // },
+});
 
 export default nextConfig;

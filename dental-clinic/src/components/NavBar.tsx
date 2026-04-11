@@ -2,10 +2,12 @@
 import Link from "next/link";
 import {useState, useCallback } from "react";
 import { FaBars, FaXmark } from "react-icons/fa6";
+import LocaleSwitcher from "./LocaleSwitcher";
+import Image from "next/image";
 
 interface NavLinkType {
-    label: string,
-    href: string
+    label: string;
+    href: string;
 }
 
 const navItems: NavLinkType[] = [
@@ -37,10 +39,16 @@ const NavBar: React.FC = () => {
     }, [setIsOpen]);
 
 	return (
-        <nav className="text-primary p-4 sm:p-6">
-            <div className="container mx-auto">
-                <div className="flex items-center justify-between">
-                    <a href="/" className="text-2xl font-bold">Logo</a>
+        <nav className="text-primary sm:p-3">
+            <div className="container mx-auto sm:flex sm:justify-between px-2 py-1">
+                <div className="flex w-full items-center justify-between px-4 py-3 sm:p-0 md:w-auto border-2s">
+                    <div className="relative h-full w-25">
+                        <Image
+                            src="/logo.png"
+                            alt="Logo"
+                            fill
+                        />
+                    </div>
                     <div className="md:hidden flex items-center">
                         <button role="button" onClick={toggle} aria-label="Toggle navigation menu">
                             {isOpen ? (
@@ -50,12 +58,13 @@ const NavBar: React.FC = () => {
                         </button>
                     </div>
                 </div>
-                <div data-testid="menu" className={`${isOpen ? "mt-4 flex" : "hidden"} flex-col gap-3 md:mt-0 md:flex md:flex-row md:items-center md:justify-end md:gap-4`}>
+                <div data-testid="menu" className={`${isOpen ? "mt-4 flex mb-3" : "hidden"} flex-col gap-3 md:mt-0 md:flex md:flex-row md:items-center md:justify-end md:gap-6`}>
                     {navItems.map((link) => (
-                        <Link role="link" onClick={closeMenu} key={link.href} href={link.href} className="font-semibold hover:text-accent3">
+                        <Link role="link" onClick={closeMenu} key={link.href} href={link.href} className="font-semibold hover:text-accent3 mx-3">
                             {link.label}
                         </Link>
                     ))}
+                    <LocaleSwitcher/>
                 </div>
             </div>
         </nav>

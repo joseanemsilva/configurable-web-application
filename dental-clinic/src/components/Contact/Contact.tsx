@@ -11,7 +11,6 @@ interface ContactProps {
 
 export default function Contact({contact}: ContactProps) {
 
-    console.log("CONTACT INFO", contact.contactInfo)
     return (
          <section id="contact" className="relative py-16 px-8 md:py-30">
             <div className="absolute left-0 top-0 -z-1 h-full w-full dark:bg-dark"></div>

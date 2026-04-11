@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { useLocale } from 'next-intl';
+import {NextIntlClientProvider} from 'next-intl';
+
 
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -32,13 +35,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = useLocale();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header>
-          <NavBar/>
+          <NextIntlClientProvider> <NavBar/> </NextIntlClientProvider>
         </header>
         <div>{children}</div>
         <Footer/>
