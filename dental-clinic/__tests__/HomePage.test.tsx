@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import HomePage from '@/app/page';
+import HomePage from '@/app/[locale]/page';
 import mockedResponses from './ResponsesMock';
 import { type MissionData, type HeroData } from '@/types/strapi'
 

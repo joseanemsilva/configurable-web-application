@@ -8,10 +8,10 @@ interface ServicesPageProps {
     service: ServicesData | null;
 }
 
-async function getPageData(): Promise<ServicesPageProps> {
+async function getPageData(locale: string): Promise<ServicesPageProps> {
     try {
         const [serviceRes] = await Promise.all([
-            getServices(),
+            getServices(locale),
         ]);
 
         return {
@@ -25,8 +25,10 @@ async function getPageData(): Promise<ServicesPageProps> {
     }
 }
 
-export default async function ServicesPage() {
-    const pageData = await getPageData();
+export default async function ServicesPage({ params }: PageProps<'/[locale]'>) {
+    
+    const {locale} = await params;
+    const pageData = await getPageData(locale);
 
     return (
         <main>

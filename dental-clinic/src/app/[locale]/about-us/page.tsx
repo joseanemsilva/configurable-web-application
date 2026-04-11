@@ -7,10 +7,10 @@ interface AboutUsPageProps {
     aboutUs: any;
 }
 
-async function getPageData(): Promise<AboutUsPageProps> {
+async function getPageData(locale: string): Promise<AboutUsPageProps> {
     try {
         const [aboutUsRes] = await Promise.all([
-            getAboutUs(),
+            getAboutUs(locale),
         ]);
 
         return {
@@ -24,8 +24,10 @@ async function getPageData(): Promise<AboutUsPageProps> {
     }
 }
 
-export default async function AboutUsPage() {
-    const pageData = await getPageData();
+export default async function AboutUsPage({ params }: PageProps<'/[locale]'>) {
+
+    const {locale} = await params;
+    const pageData = await getPageData(locale);
 
     return (
         <main>
