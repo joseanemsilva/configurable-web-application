@@ -14,20 +14,18 @@ export default function MissionSection({ mission }: MissionSectionProps) {
                 center
             />
 
-            <div className="">
-                <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                    <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
-                        {mission.contents.map ((content) => (
-                            <div key={content.id} className="mx-auto flex max-w-xs flex-col gap-y-4 p-4">
-                                <FaTooth className="text-4xl mx-auto" />
-                                <dt className="lg:text-2xl font-semibold tracking-tight text-gray-900 sm:text-2xl">{content.title}</dt>
-                                <dd className="text-base/7 text-gray-600">
-                                    {content.description}
-                                </dd>
-                            </div>
-                        ))}
-                    </dl>
-                </div>
+            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+                    {mission.contents.map((content) => (
+                        <div key={content.id} className="mx-auto flex max-w-xs flex-col gap-y-4 p-4">
+                            <FaTooth className="text-4xl mx-auto" />
+                            <dt className="lg:text-2xl font-semibold tracking-tight text-gray-900 sm:text-2xl">{content.title}</dt>
+                            <dd className="text-base/7 text-primary">
+                                {content.description}
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
             </div>
         </section>
     );

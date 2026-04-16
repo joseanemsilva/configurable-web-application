@@ -1,6 +1,5 @@
 'use client';
 import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
 import { Link, usePathname } from '@/app/navigation';
 import { cn } from '@/lib/utils';
 
@@ -26,10 +25,10 @@ const LocaleSwitcher: React.FC = () => {
     const locale = useLocale();
 
   return (
-    <div className="flex rounded-4xl bg-primary/50 p-0.5 max-w-fit">
+    <div className="flex rounded-4xl bg-primary/50 p-0.5 max-w-fit h-fit shadow-md">
         {localeLink.map((link) =>
             <Link role="link"  key={link.locale} href={pathName} locale={link.locale}>
-            <div className={cn("flex items-center justify-center w-12 cursor-pointer rounded-4xl px-4 py-1 text-base font-semibold text-background duration-300 ease-in-out", (locale === link.locale) ? "bg-primary/80" : "")}>
+            <div className={cn("flex items-center justify-center w-12 cursor-pointer rounded-4xl px-4 py-1 text-base font-semibold text-background transition duration-700 transition-discrete", (locale === link.locale) ? "bg-primary/80" : "")}>
                 {link.label}
             </div>
         </Link>

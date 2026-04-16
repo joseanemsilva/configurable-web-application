@@ -1,6 +1,7 @@
 import { IoLocationOutline, IoMailOutline, IoCallOutline } from "react-icons/io5";
+import { IconType } from "react-icons";
 import { BsClock } from "react-icons/bs";
-import React from "react";
+import React, { ReactElement } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import { type ContactData } from "@/types/strapi";
 import ContactForm from "./ContactForm";
@@ -10,6 +11,8 @@ interface ContactProps {
 }
 
 export default function Contact({contact}: ContactProps) {
+
+    const icons: ReactElement[] = [(<IoCallOutline />), ( <IoMailOutline />), (<IoLocationOutline />), (<BsClock />) ]
 
     return (
          <section id="contact" className="relative py-16 px-8 md:py-30">
@@ -29,11 +32,10 @@ export default function Contact({contact}: ContactProps) {
 
                             {/* Contact Information */}
                             <div className="mb-12 flex flex-wrap justify-between lg:mb-0">
-                                {contact.contactInfo.map((content) => (
+                                {contact.contactInfo.map((content, i) => (
                                     <div key={content.id} className="mb-8 flex w-82.5 max-w-full">
                                         <div className="mr-6 text-[32px] text-primary">
-                                            {/* {content.icon} */}
-                                            <IoCallOutline />
+                                            {icons[i]}
                                         </div>
                                         <div>
                                             <h3 className="mb-4.5 text-lg font-semibold text-dark dark:text-white">
