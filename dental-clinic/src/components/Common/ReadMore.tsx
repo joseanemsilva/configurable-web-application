@@ -25,7 +25,7 @@ export const ReadMore = ({ aria, text, maxLength = 36 }: ReadMoreProps) => {
             </p>
                 {needsButton && (
                     <button
-                        className = "rounded-4xl px-6 py-2 text-base font-semibold btn bg-primary text-background duration-300 ease-in-out hover:bg-primary/80 mb-6 cursor-pointer"
+                        className = "rounded-4xl px-6 py-2 text-base font-semibold btn bg-primary text-background duration-300 ease-in-out hover:bg-primary/80 mb-6 cursor-pointer shadow-xl"
                         type="button"
                         onClick={toggleReadMore}
                         aria-controls={aria}

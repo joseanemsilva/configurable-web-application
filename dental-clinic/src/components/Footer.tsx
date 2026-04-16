@@ -1,23 +1,37 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 const Footer: React.FC = () => {
+    // Get translation for the navigation menu
+    const t = useTranslations('Footer');
+
     return (
         <>
             <footer className="relative z-10 bg-primary pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24">
                 <div className="container mx-auto">
                     <div className="-mx-4 flex flex-wrap justify-center">
-                        <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-4/12">
-                            <div className=" px-4 mb-12 max-w-90 lg:mb-16">
+
+                        <div className="w-full px-4 md:w-1/2 lg:w-2/12 xl:w-3/12 flex">
+                            <div className="px-4 mb-12 max-w-90 lg:mb-16">
                                 {/* Logo */}
-                                <a href="/" className="text-2xl font-bold text-white"> Logo </a>
+                                <div className="flex">
+                                        <Image
+                                            src="/logo_footer.png"
+                                            alt="Logo"
+                                            width={100}
+                                            height={10}
+                                            className="object-contain"
+                                        />
+                                </div>
                                 <p className="mt-5 mb-5 text-base leading-relaxed text-accent1 dark:text-accent1-dark">
-                                    Your Smile is Our Priority
+                                    {t('slogan')}
                                 </p>
 
                                 {/* TODO: Include actual Social Links */}
-                                <div className="flex items-center">
+                                <div className="flex">
                                     <a
                                         href="/"
                                         aria-label="social-link"
@@ -44,7 +58,7 @@ const Footer: React.FC = () => {
                         <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
                             <div className="mb-12 lg:mb-16 px-4">
                                 <h2 className="mb-5 text-xl font-bold text-white dark:text-white">
-                                    Navigate
+                                    {t('title1')}
                                 </h2>
                                 <ul>
                                     <li>
@@ -52,7 +66,7 @@ const Footer: React.FC = () => {
                                             href="/"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            Home
+                                            {t('home')}
                                         </Link>
                                     </li>
                                     <li>
@@ -60,7 +74,7 @@ const Footer: React.FC = () => {
                                             href="/about-us"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            About Us
+                                            {t('aboutUs')}
                                         </Link>
                                     </li>
                                     <li>
@@ -68,7 +82,7 @@ const Footer: React.FC = () => {
                                             href="/contact-us"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            Contact Us
+                                            {t('contactUs')}
                                         </Link>
                                     </li>
                                 </ul>
@@ -78,7 +92,7 @@ const Footer: React.FC = () => {
                         <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
                             <div className="mb-12 lg:mb-16 px-4">
                                 <h2 className="mb-5 text-xl font-bold text-white dark:text-white">
-                                    Services
+                                    {t('title2')}
                                 </h2>
                                 <ul>
                                     <li>
@@ -86,7 +100,7 @@ const Footer: React.FC = () => {
                                             href="/services"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            General Dentistry
+                                            {t('service1')}
                                         </Link>
                                     </li>
                                     <li>
@@ -94,7 +108,7 @@ const Footer: React.FC = () => {
                                             href="/services"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            Invisalign
+                                            {t('service2')}
                                         </Link>
                                     </li>
                                     <li>
@@ -102,41 +116,41 @@ const Footer: React.FC = () => {
                                             href="/services"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            Cosmetic Dentistry
+                                            {t('service3')}
                                         </Link>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
+                        <div className="w-full px-4 md:w-1/2 lg:w-2/12 xl:w-2/12">
                             <div className="mb-12 lg:mb-16 px-4">
                                 <h2 className="mb-5 text-xl font-bold text-white dark:text-white">
-                                    Policy and Insurance
+                                    {t('title3')}
                                 </h2>
                                 <ul>
                                     <li>
                                         <Link
-                                            href="/privacy-policy"
+                                            href="/"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            Privacy Policy
+                                            {t('policy1')}
                                         </Link>
                                     </li>
                                     <li>
                                         <Link
-                                            href="/appointment-policy"
+                                            href="/"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            Appointment Policy
+                                            {t('policy2')}
                                         </Link>
                                     </li>
                                     <li>
                                         <Link
-                                            href="/insurance-coverage"
+                                            href="/"
                                             className="mb-4 inline-block text-base text-accent1 duration-300 hover:text-accent2 dark:text-body-color-dark dark:hover:text-accent2"
                                         >
-                                            Insurance Coverage
+                                            {t('insurance')}
                                         </Link>
                                     </li>
                                 </ul>

@@ -1,8 +1,23 @@
 {
-    "Index": {
-        "title": "Home Page!"
+    "NavBar": {
+        "home": "Home",
+        "aboutUs": "About Us",
+        "services": "Services",
+        "contactUs": "Contact Us"
     },
-    "Navbar": {
-        "main": "Go Back To Main Page"
+    "Footer": {
+        "slogan": "Your Smile is Our Priority",
+        "title1": "Navigate",
+        "home": "Home",
+        "aboutUs": "About Us",
+        "contactUs": "Contact Us",
+        "title2": "Services",
+        "service1": "General Dentistry",
+        "service2": "Invisalign",
+        "service3": "Cosmetic Dentistry",
+        "title3": "Policy and Insurance",
+        "policy1": "Privacy Policy",
+        "policy2": "Appointment Policy",
+        "insurance": "Insurance Coverage"
     }
 }

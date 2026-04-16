@@ -46,7 +46,7 @@ export default function RootLayout({
           <NextIntlClientProvider> <NavBar/> </NextIntlClientProvider>
         </header>
         <div>{children}</div>
-        <Footer/>
+        <NextIntlClientProvider> <Footer/> </NextIntlClientProvider>
       </body>
     </html>
   );

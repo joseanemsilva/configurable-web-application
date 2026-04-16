@@ -1,8 +1,25 @@
 {
-    "Index": {
-        "title": "Home Page!"
+    "NavBar":
+    {
+        "home": "Home",
+        "aboutUs": "Sobre Nós",
+        "services": "Serviços",
+        "contactUs": "Contato"
     },
-    "Navbar": {
-        "main": "Go Back To Main Page"
+    "Footer":
+    {
+        "slogan": "Seu Sorriso É a Nossa Prioridade",
+        "title1": "Menu",
+        "home": "Home",
+        "aboutUs": "Sobre Nós",
+        "contactUs": "Contato",
+        "title2": "Serviços",
+        "service1": "Odontologia Geral",
+        "service2": "Tratamento Invisalign",
+        "service3": "Odontologia Estética",
+        "title3": "Política Interna e Seguro",
+        "policy1": "Privacidade",
+        "policy2": "Política de Cancelamento",
+        "insurance": "Cobertura de Seguro"
     }
 }

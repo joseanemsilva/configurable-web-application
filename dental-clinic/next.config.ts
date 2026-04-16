@@ -28,11 +28,6 @@ const nextConfig: NextConfig = withNextIntl({
       },
     ]
   },
-
-  // i18n: {
-  //   locales: ['en', 'pt'],
-  //   defaultLocale: 'en',
-  // },
 });
 
 export default nextConfig;
