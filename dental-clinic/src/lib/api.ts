@@ -13,7 +13,9 @@ async function fetchAPI<T>(path: string) : Promise<StrapiResponse<T>> {
         });
 
     if (!response.ok) {
-        throw new Error(`API error on ${path}: ${response.status} ${response.statusText}`);
+        const errorMessage = `API error on ${path}: ${response.status} ${response.statusText}`
+        console.error(errorMessage);
+        throw new Error(errorMessage);
     }
     const data = await response.json();
     console.log(path,"API Response:", JSON.stringify(data, null, 2));
@@ -22,10 +24,24 @@ async function fetchAPI<T>(path: string) : Promise<StrapiResponse<T>> {
 
 // Use the locale language defined by the user. Otherwise, render the content with default locale.
 async function fetchLocalized<T>(path: string, locale: string) : Promise<StrapiResponse<T>> {
-    return Promise.any([
+    const promises = [
         fetchAPI<T>(`${path}&locale=${locale}`),
         fetchAPI<T>(path),
-    ])
+    ];
+    const allPromises = Promise.allSettled(promises)
+
+    const resolvedPromises = allPromises.then(
+        values => values.filter(o => o.status === 'fulfilled').map(o => o.value)
+    );
+
+    return resolvedPromises.then(
+        responses => {
+            if (responses.length === 0) {
+                throw new Error(`No response from strapi for ${path}`)
+            }
+            return responses[0];
+        }
+    );
 }
 
 // Export a helper function to fetch data from Strapi with authentication
