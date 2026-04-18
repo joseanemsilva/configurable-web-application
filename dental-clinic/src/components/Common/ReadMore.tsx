@@ -14,9 +14,9 @@ export const ReadMore = ({ aria, text, maxLength = 36 }: ReadMoreProps) => {
         setIsExpanded(!isExpanded);
     }
 
-    const displayText = isExpanded ? text : `${text.slice(0, maxLength)}...`;
-
     const needsButton = text.length > maxLength;
+
+    const displayText = (needsButton && !isExpanded) ? `${text.slice(0, maxLength)}...` : text;
 
     return (
         <div className="flex items-center justify-center flex-col lg:w-3/4  md:w-full p-2">
